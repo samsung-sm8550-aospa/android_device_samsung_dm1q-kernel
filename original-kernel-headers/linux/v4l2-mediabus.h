@@ -50,6 +50,7 @@ struct v4l2_mbus_framefmt {
 	__u16			reserved[10];
 };
 
+#ifndef __KERNEL__
 /*
  * enum v4l2_mbus_pixelcode and its definitions are now deprecated, and
  * MEDIA_BUS_FMT_ definitions (defined in media-bus-format.h) should be
@@ -146,5 +147,6 @@ enum v4l2_mbus_pixelcode {
 
 	V4L2_MBUS_FROM_MEDIA_BUS_FMT(AHSV8888_1X32),
 };
+#endif /* __KERNEL__ */
 
 #endif

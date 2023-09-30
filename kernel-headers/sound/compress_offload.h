@@ -1,21 +1,9 @@
-/****************************************************************************
- ****************************************************************************
- ***
- ***   This header was automatically generated from a Linux kernel header
- ***   of the same name, to make information necessary for userspace to
- ***   call into the kernel available to libc.  It contains only constants,
- ***   structures, and macros generated from the original header, and thus,
- ***   contains no copyrightable information.
- ***
- ***   To edit the content of this header, modify the corresponding
- ***   source file (e.g. under external/kernel-headers/original/) then
- ***   run bionic/libc/kernel/tools/update_all.py
- ***
- ***   Any manual change here will be lost the next time this script will
- ***   be run. You've been warned!
- ***
- ****************************************************************************
- ****************************************************************************/
+/*
+ * This file is auto-generated. Modifications will be lost.
+ *
+ * See https://android.googlesource.com/platform/bionic/+/master/libc/kernel/
+ * for more information.
+ */
 #ifndef __COMPRESS_OFFLOAD_H
 #define __COMPRESS_OFFLOAD_H
 #include <linux/types.h>
@@ -85,6 +73,7 @@ struct snd_compr_metadata {
 #define SNDRV_COMPRESS_DRAIN _IO('C', 0x34)
 #define SNDRV_COMPRESS_NEXT_TRACK _IO('C', 0x35)
 #define SNDRV_COMPRESS_PARTIAL_DRAIN _IO('C', 0x36)
+#define SNDRV_COMPRESS_SET_NEXT_TRACK_PARAM _IOW('C', 0x80, union snd_codec_options)
 #define SND_COMPR_TRIGGER_DRAIN 7
 #define SND_COMPR_TRIGGER_NEXT_TRACK 8
 #define SND_COMPR_TRIGGER_PARTIAL_DRAIN 9

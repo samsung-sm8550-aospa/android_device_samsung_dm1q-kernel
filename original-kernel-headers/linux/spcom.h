@@ -4,8 +4,8 @@
  * Copyright (c) 2021 Qualcomm Innovation Center, Inc. All rights reserved.
  */
 
-#ifndef _SPCOM_H_
-#define _SPCOM_H_
+#ifndef _UAPI_SPCOM_H_
+#define _UAPI_SPCOM_H_
 
 #include <linux/types.h>	/* __u32, bool */
 #ifndef BIT
@@ -77,7 +77,7 @@ enum spcom_poll_events {
 struct spcom_user_command {
 	enum spcom_cmd_id cmd_id;
 	__u32 arg;
-} __attribute__((packed));
+} __packed;
 
 /* Command structure between User Space and spcom driver, on write() */
 struct spcom_send_command {
@@ -85,7 +85,7 @@ struct spcom_send_command {
 	__u32 timeout_msec;
 	__u32 buf_size;
 	char buf[0]; /* Variable buffer size - must be last field */
-} __attribute__((packed));
+} __packed;
 
 /* Command structure between userspace spcomlib and spcom driver, on write() */
 struct spcom_user_create_channel_command {
@@ -93,7 +93,7 @@ struct spcom_user_create_channel_command {
 	char ch_name[SPCOM_CHANNEL_NAME_SIZE];
 #define SPCOM_IS_SHARABLE_SUPPORTED
 	_Bool is_sharable;
-} __attribute__((packed));
+} __packed;
 
 /* Command structure between userspace spcomlib and spcom driver, on write() */
 #define SPCOM_USER_RESTART_SP_CMD
@@ -102,7 +102,7 @@ struct spcom_user_restart_sp_command {
 	__u32 arg;
 #define SPCOM_IS_UPDATED_SUPPORETED
 	__u32 is_updated;
-} __attribute__((packed));
+} __packed;
 
 /* maximum ION buf for send-modfied-command */
 #define SPCOM_MAX_ION_BUF 4
@@ -122,7 +122,7 @@ struct spcom_ion_handle {
 struct spcom_rmb_error_info {
 	__u32 rmb_error;
 	__u32 padding;
-} __attribute__((packed));
+} __packed;
 
 /* Command structure between User Space and spcom driver, on write() */
 struct spcom_user_send_modified_command {
@@ -131,7 +131,7 @@ struct spcom_user_send_modified_command {
 	__u32 timeout_msec;
 	__u32 buf_size;
 	char buf[0]; /* Variable buffer size - must be last field */
-} __attribute__((packed));
+} __packed;
 
 enum {
 	SPCOM_IONFD_CMD,
@@ -150,7 +150,7 @@ struct spcom_poll_param {
 	enum spcom_poll_cmd_id cmd_id;
 	/* output parameter */
 	int retval;
-} __attribute__((packed));
+} __packed;
 
 #define SPCOM_IOCTL_MAGIC 'S'
 
@@ -195,12 +195,12 @@ enum spcom_ioctl_enum {
 struct spcom_dma_buf_info {
 	__s32 fd;     /* DMA buffer File Descriptor */
 	__u32 offset; /* Address offset in request or response buffer*/
-}  __attribute__((packed));
+}  __packed;
 
 /* SPCOM dma buffers info table */
 struct spcom_dma_buf_info_table {
 	struct spcom_dma_buf_info info[SPCOM_MAX_DMA_BUF];
-}  __attribute__((packed));
+}  __packed;
 
 /* SPCOM poll on event cmd struct */
 struct spcom_ioctl_poll_event {
@@ -208,12 +208,12 @@ struct spcom_ioctl_poll_event {
 	__u32 wait;      /* wait for event, zero for no wait, positive number otherwise */
 	__s32 retval;    /* updated by spcom driver  */
 	__u32 padding;   /* 64-bit alignment, unused */
-} __attribute__((packed));
+} __packed;
 
 /* SPCOM register/unregister channel cmd struct */
 struct spcom_ioctl_ch {
 	char ch_name[SPCOM_CHANNEL_NAME_SIZE]; /* 4 * 64-bit */
-}  __attribute__((packed));
+}  __packed;
 
 /* SPCOM message cmd struct */
 struct spcom_ioctl_message {
@@ -221,7 +221,7 @@ struct spcom_ioctl_message {
 	__u32 timeout_msec;
 	__u32 buffer_size;
 	char buffer[0]; /* Variable buffer size - must be last field */
-}  __attribute__((packed));
+}  __packed;
 
 /* SPCOM modified message cmd struct */
 struct spcom_ioctl_modified_message {
@@ -230,21 +230,21 @@ struct spcom_ioctl_modified_message {
 	__u32 buffer_size;
 	struct spcom_dma_buf_info info[SPCOM_MAX_DMA_BUF];
 	char buffer[0]; /* Variable buffer size - must be last field */
-}  __attribute__((packed));
+}  __packed;
 
 /* SPCOM ioctl get next request size command struct */
 struct spcom_ioctl_next_request_size {
 	char ch_name[SPCOM_CHANNEL_NAME_SIZE];  /* 4 * 64-bit */
 	__u32 size;
 	__u32 padding; /* 64-bit alignment, unused */
-}  __attribute__((packed));
+}  __packed;
 
 /* SPCOM ioctl buffer lock or unlock command struct */
 struct spcom_ioctl_dmabuf_lock {
 	char ch_name[SPCOM_CHANNEL_NAME_SIZE];  /* 4 * 64-bit */
 	__s32 fd;
 	__u32 padding; /* 64-bit alignment, unused */
-} __attribute__((packed));
+} __packed;
 
 /* SPCOM ioctl command to handle event  poll */
 #define SPCOM_IOCTL_STATE_POLL _IOWR(          \
@@ -335,4 +335,4 @@ struct spcom_ioctl_dmabuf_lock {
 		SPCOM_IOCTL_ENABLE_SSR_CMD   \
 		)
 
-#endif /* _SPCOM_H_ */
+#endif /* _UAPI_SPCOM_H_ */

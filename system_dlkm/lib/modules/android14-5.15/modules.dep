@@ -1,0 +1,2 @@
+/system_dlkm/lib/modules/android14-5.15/zsmalloc.ko:
+/system_dlkm/lib/modules/android14-5.15/zram.ko: /system_dlkm/lib/modules/android14-5.15/zsmalloc.ko

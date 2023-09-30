@@ -3,8 +3,8 @@
  * Copyright (c) 2018-2021, The Linux Foundation. All rights reserved.
  */
 
-#ifndef _MSM_RMNET_H_
-#define _MSM_RMNET_H_
+#ifndef _UAPI_MSM_RMNET_H_
+#define _UAPI_MSM_RMNET_H_
 
 #include <linux/types.h>
 
@@ -360,4 +360,4 @@ struct qmi_qos_hdr8_s {
 	__u8                reserved[2];
 } __attribute((__packed__));
 
-#endif /* _MSM_RMNET_H_ */
+#endif /* _UAPI_MSM_RMNET_H_ */

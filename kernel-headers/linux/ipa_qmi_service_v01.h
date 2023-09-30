@@ -1,21 +1,9 @@
-/****************************************************************************
- ****************************************************************************
- ***
- ***   This header was automatically generated from a Linux kernel header
- ***   of the same name, to make information necessary for userspace to
- ***   call into the kernel available to libc.  It contains only constants,
- ***   structures, and macros generated from the original header, and thus,
- ***   contains no copyrightable information.
- ***
- ***   To edit the content of this header, modify the corresponding
- ***   source file (e.g. under external/kernel-headers/original/) then
- ***   run bionic/libc/kernel/tools/update_all.py
- ***
- ***   Any manual change here will be lost the next time this script will
- ***   be run. You've been warned!
- ***
- ****************************************************************************
- ****************************************************************************/
+/*
+ * This file is auto-generated. Modifications will be lost.
+ *
+ * See https://android.googlesource.com/platform/bionic/+/master/libc/kernel/
+ * for more information.
+ */
 #ifndef IPA_QMI_SERVICE_V01_H
 #define IPA_QMI_SERVICE_V01_H
 #include <linux/types.h>
@@ -739,6 +727,8 @@ enum ipa_ep_desc_type_enum_v01 {
   DATA_EP_DESC_TYPE_TETH_RMNET_PROD_V01 = 0x09,
   DATA_EP_DESC_TYPE_EMB_FLOW_CTL_CONS_V01 = 0x0A,
   DATA_EP_DESC_TYPE_EMB_FLOW_CTL_PROD_V01 = 0x0B,
+  DATA_EP_DESC_TYPE_TETH_LL_CONS_V01 = 0x0C,
+  DATA_EP_DESC_TYPE_TETH_LL_PROD_V01 = 0x0D,
   IPA_EP_DESC_TYPE_ENUM_MAX_VAL_V01 = IPA_INT_MAX,
 };
 enum ipa_ic_type_enum_v01 {

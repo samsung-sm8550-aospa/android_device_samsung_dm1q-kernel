@@ -2,8 +2,8 @@
 /*
  * Copyright (c) 2018-2021, The Linux Foundation. All rights reserved.
  */
-#ifndef _LINUX_MSM_ION_H
-#define _LINUX_MSM_ION_H
+#ifndef _UAPI_LINUX_MSM_ION_H
+#define _UAPI_LINUX_MSM_ION_H
 
 #include <linux/types.h>
 #include <linux/msm_ion_ids.h>
@@ -92,4 +92,4 @@ struct ion_prefetch_data {
 #define ION_IOC_DRAIN			_IOWR(ION_IOC_MSM_MAGIC, 4, \
 						struct ion_prefetch_data)
 
-#endif /* _LINUX_MSM_ION_H */
+#endif /* _UAPI_LINUX_MSM_ION_H */

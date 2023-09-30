@@ -4,13 +4,15 @@
  * Copyright (c) 2021-2022, Qualcomm Innovation Center, Inc. All rights reserved.
  */
 
-#ifndef _MSM_IPA_H_
-#define _MSM_IPA_H_
+#ifndef _UAPI_MSM_IPA_H_
+#define _UAPI_MSM_IPA_H_
 
+#ifndef __KERNEL__
 #include <stdio.h>
 #include <stdint.h>
 #include <stddef.h>
 #include <sys/stat.h>
+#endif
 #include <linux/ioctl.h>
 #include <linux/types.h>
 #include <linux/if_ether.h>
@@ -1617,7 +1619,7 @@ struct IpaDscpVlanPcpMap_t {
 	uint8_t dscp[IPA_EoGRE_MAX_VLAN][IPA_EoGRE_MAX_PCP_IDX];
 	uint8_t num_vlan; /* indicate how many vlans valid */
 	uint8_t reserved0;
-} __attribute__((packed));
+} __packed;
 
 struct ipa_ipgre_info {
 	/* ip address type */
@@ -3993,4 +3995,4 @@ enum odu_bridge_mode {
 				ODU_BRIDGE_IOCTL_SET_LLV6_ADDR, \
 				struct in6_addr *)
 
-#endif /* _MSM_IPA_H_ */
+#endif /* _UAPI_MSM_IPA_H_ */

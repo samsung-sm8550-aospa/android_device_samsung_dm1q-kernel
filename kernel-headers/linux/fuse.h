@@ -1,21 +1,9 @@
-/****************************************************************************
- ****************************************************************************
- ***
- ***   This header was automatically generated from a Linux kernel header
- ***   of the same name, to make information necessary for userspace to
- ***   call into the kernel available to libc.  It contains only constants,
- ***   structures, and macros generated from the original header, and thus,
- ***   contains no copyrightable information.
- ***
- ***   To edit the content of this header, modify the corresponding
- ***   source file (e.g. under external/kernel-headers/original/) then
- ***   run bionic/libc/kernel/tools/update_all.py
- ***
- ***   Any manual change here will be lost the next time this script will
- ***   be run. You've been warned!
- ***
- ****************************************************************************
- ****************************************************************************/
+/*
+ * This file is auto-generated. Modifications will be lost.
+ *
+ * See https://android.googlesource.com/platform/bionic/+/master/libc/kernel/
+ * for more information.
+ */
 #ifndef _LINUX_FUSE_H
 #define _LINUX_FUSE_H
 #include <stdint.h>
@@ -106,8 +94,12 @@ struct fuse_file_lock {
 #define FUSE_HANDLE_KILLPRIV_V2 (1 << 28)
 #define FUSE_SETXATTR_EXT (1 << 29)
 #define FUSE_INIT_EXT (1 << 30)
-#define FUSE_PASSTHROUGH (1 << 31)
 #define FUSE_SECURITY_CTX (1ULL << 32)
+#if FUSE_KERNEL_VERSION > 7 || FUSE_KERNEL_VERSION == 7 && FUSE_KERNEL_MINOR_VERSION >= 36
+#define FUSE_PASSTHROUGH (1ULL << 63)
+#else
+#define FUSE_PASSTHROUGH (1 << 31)
+#endif
 #define CUSE_UNRESTRICTED_IOCTL (1 << 0)
 #define FUSE_RELEASE_FLUSH (1 << 0)
 #define FUSE_RELEASE_FLOCK_UNLOCK (1 << 1)

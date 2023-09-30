@@ -5,8 +5,8 @@
  * Copyright (C) 2011 Google, Inc.
  */
 
-#ifndef _LINUX_ION_H
-#define _LINUX_ION_H
+#ifndef _UAPI_LINUX_ION_H
+#define _UAPI_LINUX_ION_H
 
 #include <linux/ioctl.h>
 #include <linux/types.h>
@@ -147,4 +147,4 @@ struct ion_heap_query {
  */
 #define ION_IOC_ABI_VERSION    _IOR(ION_IOC_MAGIC, 9, \
 					__u32)
-#endif /* _LINUX_ION_H */
+#endif /* _UAPI_LINUX_ION_H */

@@ -54,11 +54,13 @@
  *              Hans Verkuil <hverkuil@xs4all.nl>
  *		et al.
  */
-#ifndef __LINUX_VIDEODEV2_H
-#define __LINUX_VIDEODEV2_H
+#ifndef _UAPI__LINUX_VIDEODEV2_H
+#define _UAPI__LINUX_VIDEODEV2_H
 
+#ifndef __KERNEL__
 #include <sys/time.h>
-
+#endif
+#include <linux/compiler.h>
 #include <linux/ioctl.h>
 #include <linux/types.h>
 #include <linux/v4l2-common.h>
@@ -324,12 +326,14 @@ enum v4l2_ycbcr_encoding {
 	/* Rec. 709/EN 61966-2-4 Extended Gamut -- HDTV */
 	V4L2_YCBCR_ENC_XV709          = 4,
 
+#ifndef __KERNEL__
 	/*
 	 * sYCC (Y'CbCr encoding of sRGB), identical to ENC_601. It was added
 	 * originally due to a misunderstanding of the sYCC standard. It should
 	 * not be used, instead use V4L2_YCBCR_ENC_601.
 	 */
 	V4L2_YCBCR_ENC_SYCC           = 5,
+#endif
 
 	/* BT.2020 Non-constant Luminance Y'CbCr */
 	V4L2_YCBCR_ENC_BT2020         = 6,
@@ -392,8 +396,10 @@ enum v4l2_quantization {
  * WARNING: Please don't use these deprecated defines in your code, as
  * there is a chance we have to remove them in the future.
  */
+#ifndef __KERNEL__
 #define V4L2_COLORSPACE_ADOBERGB V4L2_COLORSPACE_OPRGB
 #define V4L2_XFER_FUNC_ADOBERGB  V4L2_XFER_FUNC_OPRGB
+#endif
 
 enum v4l2_priority {
 	V4L2_PRIORITY_UNSET       = 0,  /* not initialized */
@@ -924,6 +930,23 @@ struct v4l2_jpegcompression {
  *	M E M O R Y - M A P P I N G   B U F F E R S
  */
 
+#ifdef __KERNEL__
+/*
+ * This corresponds to the user space version of timeval
+ * for 64-bit time_t. sparc64 is different from everyone
+ * else, using the microseconds in the wrong half of the
+ * second 64-bit word.
+ */
+struct __kernel_v4l2_timeval {
+	long long	tv_sec;
+#if defined(__sparc__) && defined(__arch64__)
+	int		tv_usec;
+	int		__pad;
+#else
+	long long	tv_usec;
+#endif
+};
+#endif
 
 struct v4l2_requestbuffers {
 	__u32			count;
@@ -1017,7 +1040,11 @@ struct v4l2_buffer {
 	__u32			bytesused;
 	__u32			flags;
 	__u32			field;
+#ifdef __KERNEL__
+	struct __kernel_v4l2_timeval timestamp;
+#else
 	struct timeval		timestamp;
+#endif
 	struct v4l2_timecode	timecode;
 	__u32			sequence;
 
@@ -1037,6 +1064,7 @@ struct v4l2_buffer {
 	};
 };
 
+#ifndef __KERNEL__
 /**
  * v4l2_timeval_to_ns - Convert timeval to nanoseconds
  * @tv:		pointer to the timeval variable to be converted
@@ -1044,10 +1072,11 @@ struct v4l2_buffer {
  * Returns the scalar nanosecond representation of the timeval
  * parameter.
  */
-static __inline__ __u64 v4l2_timeval_to_ns(const struct timeval *tv)
+static inline __u64 v4l2_timeval_to_ns(const struct timeval *tv)
 {
 	return (__u64)tv->tv_sec * 1000000000ULL + tv->tv_usec * 1000;
 }
+#endif
 
 /*  Flags for 'flags' field */
 /* Buffer is mapped (flag) */
@@ -1157,7 +1186,7 @@ struct v4l2_framebuffer {
 
 struct v4l2_clip {
 	struct v4l2_rect        c;
-	struct v4l2_clip	*next;
+	struct v4l2_clip	__user *next;
 };
 
 struct v4l2_window {
@@ -1166,7 +1195,7 @@ struct v4l2_window {
 	__u32			chromakey;
 	struct v4l2_clip	*clips;
 	__u32			clipcount;
-	void			*bitmap;
+	void			__user *bitmap;
 	__u8                    global_alpha;
 };
 
@@ -1623,7 +1652,7 @@ struct v4l2_input {
 	__u8	     name[32];		/*  Label */
 	__u32	     type;		/*  Type of input */
 	__u32	     audioset;		/*  Associated audios (bitfield) */
-	__u32        tuner;             /*  enum v4l2_tuner_type */
+	__u32        tuner;             /*  Tuner index */
 	v4l2_std_id  std;
 	__u32	     status;
 	__u32	     capabilities;
@@ -1706,29 +1735,31 @@ struct v4l2_ext_control {
 	union {
 		__s32 value;
 		__s64 value64;
-		char *string;
-		__u8 *p_u8;
-		__u16 *p_u16;
-		__u32 *p_u32;
-		struct v4l2_area *p_area;
-		struct v4l2_ctrl_h264_sps *p_h264_sps;
+		char __user *string;
+		__u8 __user *p_u8;
+		__u16 __user *p_u16;
+		__u32 __user *p_u32;
+		struct v4l2_area __user *p_area;
+		struct v4l2_ctrl_h264_sps __user *p_h264_sps;
 		struct v4l2_ctrl_h264_pps *p_h264_pps;
-		struct v4l2_ctrl_h264_scaling_matrix *p_h264_scaling_matrix;
-		struct v4l2_ctrl_h264_pred_weights *p_h264_pred_weights;
-		struct v4l2_ctrl_h264_slice_params *p_h264_slice_params;
-		struct v4l2_ctrl_h264_decode_params *p_h264_decode_params;
-		struct v4l2_ctrl_fwht_params *p_fwht_params;
-		struct v4l2_ctrl_vp8_frame *p_vp8_frame;
-		struct v4l2_ctrl_mpeg2_sequence *p_mpeg2_sequence;
-		struct v4l2_ctrl_mpeg2_picture *p_mpeg2_picture;
-		struct v4l2_ctrl_mpeg2_quantisation *p_mpeg2_quantisation;
-		void *ptr;
+		struct v4l2_ctrl_h264_scaling_matrix __user *p_h264_scaling_matrix;
+		struct v4l2_ctrl_h264_pred_weights __user *p_h264_pred_weights;
+		struct v4l2_ctrl_h264_slice_params __user *p_h264_slice_params;
+		struct v4l2_ctrl_h264_decode_params __user *p_h264_decode_params;
+		struct v4l2_ctrl_fwht_params __user *p_fwht_params;
+		struct v4l2_ctrl_vp8_frame __user *p_vp8_frame;
+		struct v4l2_ctrl_mpeg2_sequence __user *p_mpeg2_sequence;
+		struct v4l2_ctrl_mpeg2_picture __user *p_mpeg2_picture;
+		struct v4l2_ctrl_mpeg2_quantisation __user *p_mpeg2_quantisation;
+		void __user *ptr;
 	};
 } __attribute__ ((packed));
 
 struct v4l2_ext_controls {
 	union {
+#ifndef __KERNEL__
 		__u32 ctrl_class;
+#endif
 		__u32 which;
 	};
 	__u32 count;
@@ -1739,7 +1770,9 @@ struct v4l2_ext_controls {
 };
 
 #define V4L2_CTRL_ID_MASK	  (0x0fffffff)
+#ifndef __KERNEL__
 #define V4L2_CTRL_ID2CLASS(id)    ((id) & 0x0fff0000UL)
+#endif
 #define V4L2_CTRL_ID2WHICH(id)    ((id) & 0x0fff0000UL)
 #define V4L2_CTRL_DRIVER_PRIV(id) (((id) & 0xffff) >= 0x1000)
 #define V4L2_CTRL_MAX_DIMS	  (4)
@@ -2396,7 +2429,11 @@ struct v4l2_event {
 	} u;
 	__u32				pending;
 	__u32				sequence;
+#ifdef __KERNEL__
+	struct __kernel_timespec	timestamp;
+#else
 	struct timespec			timestamp;
+#endif
 	__u32				id;
 	__u32				reserved[8];
 };
@@ -2579,4 +2616,4 @@ struct v4l2_create_buffers {
 
 #define BASE_VIDIOC_PRIVATE	192		/* 192-255 are private */
 
-#endif /* __LINUX_VIDEODEV2_H */
+#endif /* _UAPI__LINUX_VIDEODEV2_H */

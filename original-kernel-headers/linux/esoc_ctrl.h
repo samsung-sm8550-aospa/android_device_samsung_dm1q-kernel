@@ -4,8 +4,8 @@
  * Copyright (c) 2022, Qualcomm Innovation Center, Inc. All rights reserved.
  */
 
-#ifndef _ESOC_CTRL_H_
-#define _ESOC_CTRL_H_
+#ifndef _UAPI_ESOC_CTRL_H_
+#define _UAPI_ESOC_CTRL_H_
 
 #include <linux/types.h>
 

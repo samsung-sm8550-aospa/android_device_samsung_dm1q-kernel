@@ -1,23 +1,11 @@
-/****************************************************************************
- ****************************************************************************
- ***
- ***   This header was automatically generated from a Linux kernel header
- ***   of the same name, to make information necessary for userspace to
- ***   call into the kernel available to libc.  It contains only constants,
- ***   structures, and macros generated from the original header, and thus,
- ***   contains no copyrightable information.
- ***
- ***   To edit the content of this header, modify the corresponding
- ***   source file (e.g. under external/kernel-headers/original/) then
- ***   run bionic/libc/kernel/tools/update_all.py
- ***
- ***   Any manual change here will be lost the next time this script will
- ***   be run. You've been warned!
- ***
- ****************************************************************************
- ****************************************************************************/
-#ifndef _MSM_IPA_H_
-#define _MSM_IPA_H_
+/*
+ * This file is auto-generated. Modifications will be lost.
+ *
+ * See https://android.googlesource.com/platform/bionic/+/master/libc/kernel/
+ * for more information.
+ */
+#ifndef _UAPI_MSM_IPA_H_
+#define _UAPI_MSM_IPA_H_
 #include <stdio.h>
 #include <stdint.h>
 #include <stddef.h>
@@ -855,7 +843,7 @@ struct IpaDscpVlanPcpMap_t {
   uint8_t dscp[IPA_EoGRE_MAX_VLAN][IPA_EoGRE_MAX_PCP_IDX];
   uint8_t num_vlan;
   uint8_t reserved0;
-} __attribute__((packed));
+} __attribute__((__packed__));
 struct ipa_ipgre_info {
   enum ipa_ip_type iptype;
   uint32_t ipv4_src;

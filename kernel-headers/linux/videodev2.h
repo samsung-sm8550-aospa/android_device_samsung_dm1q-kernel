@@ -1,24 +1,13 @@
-/****************************************************************************
- ****************************************************************************
- ***
- ***   This header was automatically generated from a Linux kernel header
- ***   of the same name, to make information necessary for userspace to
- ***   call into the kernel available to libc.  It contains only constants,
- ***   structures, and macros generated from the original header, and thus,
- ***   contains no copyrightable information.
- ***
- ***   To edit the content of this header, modify the corresponding
- ***   source file (e.g. under external/kernel-headers/original/) then
- ***   run bionic/libc/kernel/tools/update_all.py
- ***
- ***   Any manual change here will be lost the next time this script will
- ***   be run. You've been warned!
- ***
- ****************************************************************************
- ****************************************************************************/
-#ifndef __LINUX_VIDEODEV2_H
-#define __LINUX_VIDEODEV2_H
+/*
+ * This file is auto-generated. Modifications will be lost.
+ *
+ * See https://android.googlesource.com/platform/bionic/+/master/libc/kernel/
+ * for more information.
+ */
+#ifndef _UAPI__LINUX_VIDEODEV2_H
+#define _UAPI__LINUX_VIDEODEV2_H
 #include <sys/time.h>
+#include <linux/compiler.h>
 #include <linux/ioctl.h>
 #include <linux/types.h>
 #include <linux/v4l2-common.h>
@@ -632,7 +621,7 @@ struct v4l2_framebuffer {
 #define V4L2_FBUF_FLAG_SRC_CHROMAKEY 0x0040
 struct v4l2_clip {
   struct v4l2_rect c;
-  struct v4l2_clip * next;
+  struct v4l2_clip  * next;
 };
 struct v4l2_window {
   struct v4l2_rect w;
@@ -640,7 +629,7 @@ struct v4l2_window {
   __u32 chromakey;
   struct v4l2_clip * clips;
   __u32 clipcount;
-  void * bitmap;
+  void  * bitmap;
   __u8 global_alpha;
 };
 struct v4l2_captureparm {
@@ -877,23 +866,23 @@ struct v4l2_ext_control {
   union {
     __s32 value;
     __s64 value64;
-    char * string;
-    __u8 * p_u8;
-    __u16 * p_u16;
-    __u32 * p_u32;
-    struct v4l2_area * p_area;
-    struct v4l2_ctrl_h264_sps * p_h264_sps;
+    char  * string;
+    __u8  * p_u8;
+    __u16  * p_u16;
+    __u32  * p_u32;
+    struct v4l2_area  * p_area;
+    struct v4l2_ctrl_h264_sps  * p_h264_sps;
     struct v4l2_ctrl_h264_pps * p_h264_pps;
-    struct v4l2_ctrl_h264_scaling_matrix * p_h264_scaling_matrix;
-    struct v4l2_ctrl_h264_pred_weights * p_h264_pred_weights;
-    struct v4l2_ctrl_h264_slice_params * p_h264_slice_params;
-    struct v4l2_ctrl_h264_decode_params * p_h264_decode_params;
-    struct v4l2_ctrl_fwht_params * p_fwht_params;
-    struct v4l2_ctrl_vp8_frame * p_vp8_frame;
-    struct v4l2_ctrl_mpeg2_sequence * p_mpeg2_sequence;
-    struct v4l2_ctrl_mpeg2_picture * p_mpeg2_picture;
-    struct v4l2_ctrl_mpeg2_quantisation * p_mpeg2_quantisation;
-    void * ptr;
+    struct v4l2_ctrl_h264_scaling_matrix  * p_h264_scaling_matrix;
+    struct v4l2_ctrl_h264_pred_weights  * p_h264_pred_weights;
+    struct v4l2_ctrl_h264_slice_params  * p_h264_slice_params;
+    struct v4l2_ctrl_h264_decode_params  * p_h264_decode_params;
+    struct v4l2_ctrl_fwht_params  * p_fwht_params;
+    struct v4l2_ctrl_vp8_frame  * p_vp8_frame;
+    struct v4l2_ctrl_mpeg2_sequence  * p_mpeg2_sequence;
+    struct v4l2_ctrl_mpeg2_picture  * p_mpeg2_picture;
+    struct v4l2_ctrl_mpeg2_quantisation  * p_mpeg2_quantisation;
+    void  * ptr;
   };
 } __attribute__((packed));
 struct v4l2_ext_controls {

@@ -1,21 +1,9 @@
-/****************************************************************************
- ****************************************************************************
- ***
- ***   This header was automatically generated from a Linux kernel header
- ***   of the same name, to make information necessary for userspace to
- ***   call into the kernel available to libc.  It contains only constants,
- ***   structures, and macros generated from the original header, and thus,
- ***   contains no copyrightable information.
- ***
- ***   To edit the content of this header, modify the corresponding
- ***   source file (e.g. under external/kernel-headers/original/) then
- ***   run bionic/libc/kernel/tools/update_all.py
- ***
- ***   Any manual change here will be lost the next time this script will
- ***   be run. You've been warned!
- ***
- ****************************************************************************
- ****************************************************************************/
+/*
+ * This file is auto-generated. Modifications will be lost.
+ *
+ * See https://android.googlesource.com/platform/bionic/+/master/libc/kernel/
+ * for more information.
+ */
 #ifndef _SDE_DRM_H_
 #define _SDE_DRM_H_
 #include <drm/drm.h>
@@ -43,16 +31,12 @@ extern "C" {
 #define DRM_FORMAT_MOD_QCOM_TIGHT fourcc_mod_code(QCOM, 0x4)
 #define DRM_FORMAT_MOD_QCOM_TILE fourcc_mod_code(QCOM, 0x8)
 #define DRM_FORMAT_MOD_QCOM_ALPHA_SWAP fourcc_mod_code(QCOM, 0x10)
-#define DRM_FORMAT_MOD_QCOM_FSC_TILE fourcc_mod_code(QCOM, 0x20)
 #define SDE_DRM_BLEND_OP_NOT_DEFINED 0
 #define SDE_DRM_BLEND_OP_OPAQUE 1
 #define SDE_DRM_BLEND_OP_PREMULTIPLIED 2
 #define SDE_DRM_BLEND_OP_COVERAGE 3
 #define SDE_DRM_BLEND_OP_MAX 4
 #define SDE_DRM_BLEND_OP_SKIP 5
-#define SDE_SYSCACHE_LLCC_DISP 0
-#define SDE_SYSCACHE_LLCC_EVA_LEFT 1
-#define SDE_SYSCACHE_LLCC_EVA_RIGHT 2
 #define SDE_DRM_DEINTERLACE 0
 #define SDE_DRM_BITMASK_COUNT 64
 #define SDE_DRM_FB_NON_SEC 0
@@ -98,6 +82,8 @@ struct sde_drm_de_v1 {
   __s16 adjust_c[SDE_MAX_DE_CURVES];
 };
 #define SDE_DYN_EXP_DISABLE 0x1
+#define SDE_DE_LPF_BLEND_FILT
+#define SDE_DE_LPF_BLEND_FLAG_EN (1 << 0)
 #define SDE_DRM_QSEED3LITE
 #define SDE_DRM_QSEED4
 #define SDE_DRM_INLINE_PREDOWNSCALE
@@ -136,8 +122,12 @@ struct sde_drm_scaler_v2 {
   __u32 pre_downscale_x_1;
   __u32 pre_downscale_y_0;
   __u32 pre_downscale_y_1;
+  __u32 de_lpf_flags;
+  __u32 de_lpf_h;
+  __u32 de_lpf_l;
+  __u32 de_lpf_m;
 };
-#define SDE_MAX_DS_COUNT 2
+#define SDE_MAX_DS_COUNT 4
 #define SDE_DRM_DESTSCALER_ENABLE 0x1
 #define SDE_DRM_DESTSCALER_SCALE_UPDATE 0x2
 #define SDE_DRM_DESTSCALER_ENHANCER_UPDATE 0x4
@@ -220,7 +210,7 @@ struct sde_drm_ubwc_stats_data {
 };
 #define SDE_FRAME_DATA_BUFFER_MAX 0x3
 #define SDE_FRAME_DATA_GUARD_BYTES 0xFF
-#define SDE_FRAME_DATA_MAX_PLANES 0x10
+#define SDE_FRAME_DATA_MAX_PLANES 0x14
 struct sde_drm_frame_data_buffers_ctrl {
   __u32 num_buffers;
   __u32 fds[SDE_FRAME_DATA_BUFFER_MAX];
@@ -332,6 +322,44 @@ struct drm_msm_noise_layer_cfg {
   __u32 strength;
   __u32 alpha_noise;
 };
+#define FEATURE_DNSC_BLUR
+#define DNSC_BLUR_COEF_NUM 64
+#define DNSC_BLUR_EN (1 << 0)
+#define DNSC_BLUR_RND_8B_EN (1 << 1)
+#define DNSC_BLUR_DITHER_EN (1 << 2)
+#define DNSC_BLUR_MIRROR_BLK_CFG (1 << 16)
+#define DNSC_BLUR_INDEPENDENT_BLK_CFG (1 << 17)
+#define DNSC_BLUR_GAUS_FILTER (1 << 0)
+#define DNSC_BLUR_PCMN_FILTER (1 << 1)
+#define DNSC_BLUR_DITHER_MATRIX_SZ 16
+#define DNSC_BLUR_DITHER_LUMA_MODE (1 << 0)
+struct sde_drm_dnsc_blur_cfg {
+  __u64 flags;
+  __u32 num_blocks;
+  __u32 src_width;
+  __u32 src_height;
+  __u32 dst_width;
+  __u32 dst_height;
+  __u32 flags_h;
+  __u32 flags_v;
+  __u32 phase_init_h;
+  __u32 phase_step_h;
+  __u32 phase_init_v;
+  __u32 phase_step_v;
+  __u32 norm_h;
+  __u32 ratio_h;
+  __u32 norm_v;
+  __u32 ratio_v;
+  __u32 coef_hori[DNSC_BLUR_COEF_NUM];
+  __u32 coef_vert[DNSC_BLUR_COEF_NUM];
+  __u64 dither_flags;
+  __u32 temporal_en;
+  __u32 c0_bitdepth;
+  __u32 c1_bitdepth;
+  __u32 c2_bitdepth;
+  __u32 c3_bitdepth;
+  __u32 dither_matrix[DNSC_BLUR_DITHER_MATRIX_SZ];
+};
 #define DRM_SDE_WB_CONFIG 0x40
 #define DRM_MSM_REGISTER_EVENT 0x41
 #define DRM_MSM_DEREGISTER_EVENT 0x42
@@ -353,6 +381,8 @@ struct drm_msm_noise_layer_cfg {
 #define DRM_EVENT_FRAME_DATA 0x8000000C
 #define DRM_EVENT_DIMMING_BL 0X8000000D
 #define DRM_EVENT_VM_RELEASE 0X8000000E
+#define DRM_EVENT_OPR_VALUE 0X8000000F
+#define DRM_EVENT_MISR_SIGN 0X80000010
 #ifndef DRM_MODE_FLAG_VID_MODE_PANEL
 #define DRM_MODE_FLAG_VID_MODE_PANEL 0x01
 #endif
