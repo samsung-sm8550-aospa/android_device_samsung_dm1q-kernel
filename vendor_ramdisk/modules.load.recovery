@@ -57,7 +57,6 @@ qnoc-kalama.ko
 nvmem_qcom-spmi-sdam.ko
 phy-qcom-ufs.ko
 phy-qcom-ufs-qmp-v4-kalama.ko
-phy-qcom-ufs-qmp-v4-crow.ko
 phy-qcom-ufs-qrbtc-sdm845.ko
 arm_smmu.ko
 pinctrl-msm.ko
@@ -126,11 +125,11 @@ blk-sec-stats.ko
 blk-sec-wb.ko
 msm_show_resume_irq.ko
 mhi.ko
-mhi_cntrl_qcom.ko
 mhi_dev_uci.ko
 mhi_dev_netdev.ko
 mhi_dev_dtr.ko
 mhi_dev_satellite.ko
+mhi_cntrl_qcom.ko
 phy-qcom-ufs-qmp-v4-waipio.ko
 phy-qcom-ufs-qmp-v4.ko
 phy-qcom-ufs-qmp-v4-khaje.ko
@@ -209,6 +208,7 @@ phy-msm-snps-eusb2.ko
 phy-msm-m31-eusb2.ko
 dwc3-msm.ko
 ehset.ko
+lvstest.ko
 usb_f_cdev.ko
 usb_f_ccid.ko
 usb_f_qdss.ko
@@ -296,7 +296,6 @@ switch_gpio.ko
 vibrator_vib_info.ko
 dev_ril_bridge.ko
 sec_panel_notifier.ko
-dropdump.ko
 vbus_notifier.ko
 max77705_charger.ko
 sb-core.ko
@@ -364,4 +363,3 @@ msm_ext_display.ko
 sync_fence.ko
 msm_hw_fence.ko
 msm-mmrm.ko
-smcinvoke_dlkm.ko

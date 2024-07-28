@@ -213,8 +213,6 @@ alias of:N*T*Cqcom,bam-v1.7.0 bam_dma
 alias of:N*T*Cqcom,bam-v1.7.0C* bam_dma
 alias of:N*T*Cqcom,usb-bam-msm usb_bam
 alias of:N*T*Cqcom,usb-bam-msmC* usb_bam
-alias of:N*T*Cqcom,ufs-phy-qmp-v4-crow phy_qcom_ufs_qmp_v4_crow
-alias of:N*T*Cqcom,ufs-phy-qmp-v4-crowC* phy_qcom_ufs_qmp_v4_crow
 alias of:N*T*Csamsung,reboot_cmd sec_reboot_cmd
 alias of:N*T*Csamsung,reboot_cmdC* sec_reboot_cmd
 alias of:N*T*Cqcom,ufs-phy-qmp-v4-waipio phy_qcom_ufs_qmp_v4_waipio
@@ -344,6 +342,8 @@ alias of:N*T*Cqcom,kona-cdsp-pas qcom_q6v5_pas
 alias of:N*T*Cqcom,kona-cdsp-pasC* qcom_q6v5_pas
 alias of:N*T*Cqcom,kona-slpi-pas qcom_q6v5_pas
 alias of:N*T*Cqcom,kona-slpi-pasC* qcom_q6v5_pas
+alias of:N*T*Cqcom,kona-npu-pas qcom_q6v5_pas
+alias of:N*T*Cqcom,kona-npu-pasC* qcom_q6v5_pas
 alias of:N*T*Cqcom,crow-wpss-pas qcom_q6v5_pas
 alias of:N*T*Cqcom,crow-wpss-pasC* qcom_q6v5_pas
 alias of:N*T*Cqcom,crow-adsp-pas qcom_q6v5_pas
@@ -368,8 +368,12 @@ alias of:N*T*Cqcom,qcs605-adsp-pas qcom_q6v5_pas
 alias of:N*T*Cqcom,qcs605-adsp-pasC* qcom_q6v5_pas
 alias of:N*T*Cqcom,qcs605-cdsp-pas qcom_q6v5_pas
 alias of:N*T*Cqcom,qcs605-cdsp-pasC* qcom_q6v5_pas
-alias of:N*T*Cqcom,qcs605-modem-pas qcom_q6v5_pas
-alias of:N*T*Cqcom,qcs605-modem-pasC* qcom_q6v5_pas
+alias of:N*T*Cqcom,bengal-adsp-pas qcom_q6v5_pas
+alias of:N*T*Cqcom,bengal-adsp-pasC* qcom_q6v5_pas
+alias of:N*T*Cqcom,bengal-cdsp-pas qcom_q6v5_pas
+alias of:N*T*Cqcom,bengal-cdsp-pasC* qcom_q6v5_pas
+alias of:N*T*Cqcom,bengal-modem-pas qcom_q6v5_pas
+alias of:N*T*Cqcom,bengal-modem-pasC* qcom_q6v5_pas
 alias of:N*T*Cqcom,cmd-db cmd_db
 alias of:N*T*Cqcom,cmd-dbC* cmd_db
 alias platform:spi_geni spi_msm_geni

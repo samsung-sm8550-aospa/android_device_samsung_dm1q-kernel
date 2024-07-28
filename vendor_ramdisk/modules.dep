@@ -26,12 +26,12 @@
 /lib/modules/qnoc-kalama.ko: /lib/modules/qnoc-qos.ko /lib/modules/icc-rpmh.ko /lib/modules/icc-bcm-voter.ko /lib/modules/qcom_rpmh.ko /lib/modules/cmd-db.ko /lib/modules/socinfo.ko /lib/modules/sec_debug.ko /lib/modules/smem.ko
 /lib/modules/qcom-dload-mode.ko: /lib/modules/qcom-scm.ko /lib/modules/minidump.ko /lib/modules/smem.ko
 /lib/modules/qti-ocp-notifier.ko:
-/lib/modules/dropdump.ko:
 /lib/modules/hall_ic.ko: /lib/modules/hall_ic_notifier.ko /lib/modules/sec_class.ko
 /lib/modules/lcd.ko:
 /lib/modules/dev_ril_bridge.ko:
 /lib/modules/cpu_hotplug.ko: /lib/modules/sec_pm_log.ko
 /lib/modules/qcom_aoss.ko:
+/lib/modules/lvstest.ko: /lib/modules/if_cb_manager.ko
 /lib/modules/snvm.ko:
 /lib/modules/qcom-reboot-reason.ko:
 /lib/modules/sec_qc_upload_cause.ko: /lib/modules/sec_crashkey_long.ko /lib/modules/sec_key_notifier.ko /lib/modules/sec_upload_cause.ko /lib/modules/sec_debug.ko
@@ -57,7 +57,6 @@
 /lib/modules/usb_bam.ko: /lib/modules/sps_drv.ko
 /lib/modules/leds-qti-flash.ko:
 /lib/modules/pdic_notifier_module.ko: /lib/modules/switch_class.ko /lib/modules/usb_notify_layer.ko /lib/modules/sec_class.ko
-/lib/modules/phy-qcom-ufs-qmp-v4-crow.ko: /lib/modules/phy-qcom-ufs.ko /lib/modules/minidump.ko /lib/modules/smem.ko
 /lib/modules/sec_reboot_cmd.ko:
 /lib/modules/phy-qcom-ufs-qmp-v4-waipio.ko: /lib/modules/phy-qcom-ufs.ko /lib/modules/minidump.ko /lib/modules/smem.ko
 /lib/modules/debugcc-kalama.ko: /lib/modules/clk-dummy.ko /lib/modules/clk-qcom.ko /lib/modules/gdsc-regulator.ko /lib/modules/proxy-consumer.ko /lib/modules/debug-regulator.ko /lib/modules/sec_debug.ko
@@ -191,7 +190,7 @@
 /lib/modules/kperfmon.ko:
 /lib/modules/ipa_fmwk.ko:
 /lib/modules/usb_f_conn_gadget.ko:
-/lib/modules/i2c-msm-geni.ko:
+/lib/modules/i2c-msm-geni.ko: /lib/modules/msm_gpi.ko
 /lib/modules/sec_secure_touch.ko: /lib/modules/sec_class.ko
 /lib/modules/sys_pm_vx.ko: /lib/modules/subsystem_sleep_stats.ko /lib/modules/soc_sleep_stats.ko /lib/modules/cdsp-loader.ko /lib/modules/qcom_ramdump.ko /lib/modules/sec_pm_log.ko /lib/modules/sec_debug.ko /lib/modules/smem.ko
 /lib/modules/memory_dump_v2.ko: /lib/modules/qcom-scm.ko /lib/modules/minidump.ko /lib/modules/sec_debug.ko /lib/modules/smem.ko

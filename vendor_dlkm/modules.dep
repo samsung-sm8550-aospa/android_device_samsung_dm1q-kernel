@@ -32,7 +32,6 @@
 /vendor_dlkm/lib/modules/rmnet_sch.ko:
 /vendor_dlkm/lib/modules/qcedev-mod_dlkm.ko: /vendor_dlkm/lib/modules/mem_buf_dev.ko /vendor_dlkm/lib/modules/secure_buffer.ko /vendor_dlkm/lib/modules/qce50_dlkm.ko /vendor_dlkm/lib/modules/sps_drv.ko /vendor_dlkm/lib/modules/gh_rm_drv.ko /vendor_dlkm/lib/modules/gh_dbl.ko /vendor_dlkm/lib/modules/gh_msgq.ko /vendor_dlkm/lib/modules/gh_arm_drv.ko /vendor_dlkm/lib/modules/qcom-scm.ko
 /vendor_dlkm/lib/modules/qti-ocp-notifier.ko:
-/vendor_dlkm/lib/modules/dropdump.ko:
 /vendor_dlkm/lib/modules/hall_ic.ko: /vendor_dlkm/lib/modules/hall_ic_notifier.ko /vendor_dlkm/lib/modules/sec_class.ko
 /vendor_dlkm/lib/modules/lcd.ko:
 /vendor_dlkm/lib/modules/dev_ril_bridge.ko:
@@ -87,6 +86,7 @@
 /vendor_dlkm/lib/modules/qcom_ramdump.ko:
 /vendor_dlkm/lib/modules/mhi_dev_satellite.ko: /vendor_dlkm/lib/modules/mhi.ko /vendor_dlkm/lib/modules/pci-msm-drv.ko /vendor_dlkm/lib/modules/rproc_qcom_common.ko /vendor_dlkm/lib/modules/qcom_smd.ko /vendor_dlkm/lib/modules/qcom_glink_smem.ko /vendor_dlkm/lib/modules/qcom_glink.ko /vendor_dlkm/lib/modules/qcom_aoss.ko /vendor_dlkm/lib/modules/clk-qcom.ko /vendor_dlkm/lib/modules/gdsc-regulator.ko /vendor_dlkm/lib/modules/proxy-consumer.ko /vendor_dlkm/lib/modules/debug-regulator.ko /vendor_dlkm/lib/modules/sec_qc_user_reset.ko /vendor_dlkm/lib/modules/sec_qc_summary.ko /vendor_dlkm/lib/modules/sched-walt.ko /vendor_dlkm/lib/modules/qcom-cpufreq-hw.ko /vendor_dlkm/lib/modules/sec_pm_log.ko /vendor_dlkm/lib/modules/sec_debug_region.ko /vendor_dlkm/lib/modules/qcom_wdt_core.ko /vendor_dlkm/lib/modules/memory_dump_v2.ko /vendor_dlkm/lib/modules/qcom-scm.ko /vendor_dlkm/lib/modules/minidump.ko /vendor_dlkm/lib/modules/sec_param.ko /vendor_dlkm/lib/modules/sec_qc_dbg_partition.ko /vendor_dlkm/lib/modules/sec_debug.ko /vendor_dlkm/lib/modules/smem.ko /vendor_dlkm/lib/modules/sec_class.ko
 /vendor_dlkm/lib/modules/msm-mmrm.ko: /vendor_dlkm/lib/modules/clk-qcom.ko /vendor_dlkm/lib/modules/gdsc-regulator.ko /vendor_dlkm/lib/modules/proxy-consumer.ko /vendor_dlkm/lib/modules/debug-regulator.ko /vendor_dlkm/lib/modules/sec_debug.ko
+/vendor_dlkm/lib/modules/tc956x_pcie_eth.ko:
 /vendor_dlkm/lib/modules/audio_pkt_dlkm.ko: /vendor_dlkm/lib/modules/audpkt_ion_dlkm.ko /vendor_dlkm/lib/modules/spf_core_dlkm.ko /vendor_dlkm/lib/modules/snd_debug_proc.ko /vendor_dlkm/lib/modules/gpr_dlkm.ko /vendor_dlkm/lib/modules/snd_event_dlkm.ko /vendor_dlkm/lib/modules/q6_notifier_dlkm.ko /vendor_dlkm/lib/modules/q6_pdr_dlkm.ko /vendor_dlkm/lib/modules/pdr_interface.ko /vendor_dlkm/lib/modules/qmi_helpers.ko /vendor_dlkm/lib/modules/secure_buffer.ko /vendor_dlkm/lib/modules/rproc_qcom_common.ko /vendor_dlkm/lib/modules/qcom_smd.ko /vendor_dlkm/lib/modules/qcom_glink_smem.ko /vendor_dlkm/lib/modules/qcom_glink.ko /vendor_dlkm/lib/modules/qcom_aoss.ko /vendor_dlkm/lib/modules/qcom-scm.ko /vendor_dlkm/lib/modules/smem.ko
 /vendor_dlkm/lib/modules/pdic_max77705.ko: /vendor_dlkm/lib/modules/mfd_max77705.ko /vendor_dlkm/lib/modules/if_cb_manager.ko /vendor_dlkm/lib/modules/usb_typec_manager.ko /vendor_dlkm/lib/modules/abc.ko /vendor_dlkm/lib/modules/common_muic.ko /vendor_dlkm/lib/modules/vbus_notifier.ko /vendor_dlkm/lib/modules/pdic_notifier_module.ko /vendor_dlkm/lib/modules/switch_class.ko /vendor_dlkm/lib/modules/usb_notify_layer.ko /vendor_dlkm/lib/modules/sec_class.ko
 /vendor_dlkm/lib/modules/sec_qc_hw_param.ko: /vendor_dlkm/lib/modules/sec_qc_smem.ko /vendor_dlkm/lib/modules/sec_qc_user_reset.ko /vendor_dlkm/lib/modules/sec_qc_summary.ko /vendor_dlkm/lib/modules/sched-walt.ko /vendor_dlkm/lib/modules/qcom-cpufreq-hw.ko /vendor_dlkm/lib/modules/sec_pm_log.ko /vendor_dlkm/lib/modules/sec_debug_region.ko /vendor_dlkm/lib/modules/qcom_wdt_core.ko /vendor_dlkm/lib/modules/memory_dump_v2.ko /vendor_dlkm/lib/modules/qcom-scm.ko /vendor_dlkm/lib/modules/minidump.ko /vendor_dlkm/lib/modules/sec_param.ko /vendor_dlkm/lib/modules/sec_qc_dbg_partition.ko /vendor_dlkm/lib/modules/sec_qc_upload_cause.ko /vendor_dlkm/lib/modules/sec_crashkey_long.ko /vendor_dlkm/lib/modules/sec_key_notifier.ko /vendor_dlkm/lib/modules/sec_upload_cause.ko /vendor_dlkm/lib/modules/socinfo.ko /vendor_dlkm/lib/modules/sec_debug.ko /vendor_dlkm/lib/modules/smem.ko /vendor_dlkm/lib/modules/sec_class.ko
@@ -139,6 +139,7 @@
 /vendor_dlkm/lib/modules/qcom_glink_smem.ko: /vendor_dlkm/lib/modules/qcom_glink.ko /vendor_dlkm/lib/modules/smem.ko
 /vendor_dlkm/lib/modules/sec_log_buf.ko:
 /vendor_dlkm/lib/modules/cdsprm.ko:
+/vendor_dlkm/lib/modules/realtek.ko:
 /vendor_dlkm/lib/modules/rpmh-regulator.ko: /vendor_dlkm/lib/modules/qcom_rpmh.ko /vendor_dlkm/lib/modules/cmd-db.ko /vendor_dlkm/lib/modules/proxy-consumer.ko /vendor_dlkm/lib/modules/debug-regulator.ko
 /vendor_dlkm/lib/modules/qcom_glink.ko:
 /vendor_dlkm/lib/modules/mhi.ko: /vendor_dlkm/lib/modules/pci-msm-drv.ko /vendor_dlkm/lib/modules/rproc_qcom_common.ko /vendor_dlkm/lib/modules/qcom_smd.ko /vendor_dlkm/lib/modules/qcom_glink_smem.ko /vendor_dlkm/lib/modules/qcom_glink.ko /vendor_dlkm/lib/modules/qcom_aoss.ko /vendor_dlkm/lib/modules/clk-qcom.ko /vendor_dlkm/lib/modules/gdsc-regulator.ko /vendor_dlkm/lib/modules/proxy-consumer.ko /vendor_dlkm/lib/modules/debug-regulator.ko /vendor_dlkm/lib/modules/sec_qc_user_reset.ko /vendor_dlkm/lib/modules/sec_qc_summary.ko /vendor_dlkm/lib/modules/sched-walt.ko /vendor_dlkm/lib/modules/qcom-cpufreq-hw.ko /vendor_dlkm/lib/modules/sec_pm_log.ko /vendor_dlkm/lib/modules/sec_debug_region.ko /vendor_dlkm/lib/modules/qcom_wdt_core.ko /vendor_dlkm/lib/modules/memory_dump_v2.ko /vendor_dlkm/lib/modules/qcom-scm.ko /vendor_dlkm/lib/modules/minidump.ko /vendor_dlkm/lib/modules/sec_param.ko /vendor_dlkm/lib/modules/sec_qc_dbg_partition.ko /vendor_dlkm/lib/modules/sec_debug.ko /vendor_dlkm/lib/modules/smem.ko /vendor_dlkm/lib/modules/sec_class.ko
@@ -221,7 +222,7 @@
 /vendor_dlkm/lib/modules/kperfmon.ko:
 /vendor_dlkm/lib/modules/ipa_fmwk.ko:
 /vendor_dlkm/lib/modules/usb_f_conn_gadget.ko:
-/vendor_dlkm/lib/modules/i2c-msm-geni.ko:
+/vendor_dlkm/lib/modules/i2c-msm-geni.ko: /vendor_dlkm/lib/modules/msm_gpi.ko
 /vendor_dlkm/lib/modules/sec_secure_touch.ko: /vendor_dlkm/lib/modules/sec_class.ko
 /vendor_dlkm/lib/modules/sys_pm_vx.ko: /vendor_dlkm/lib/modules/subsystem_sleep_stats.ko /vendor_dlkm/lib/modules/soc_sleep_stats.ko /vendor_dlkm/lib/modules/cdsp-loader.ko /vendor_dlkm/lib/modules/qcom_ramdump.ko /vendor_dlkm/lib/modules/sec_pm_log.ko /vendor_dlkm/lib/modules/sec_debug.ko /vendor_dlkm/lib/modules/smem.ko
 /vendor_dlkm/lib/modules/memory_dump_v2.ko: /vendor_dlkm/lib/modules/qcom-scm.ko /vendor_dlkm/lib/modules/minidump.ko /vendor_dlkm/lib/modules/sec_debug.ko /vendor_dlkm/lib/modules/smem.ko
@@ -256,6 +257,7 @@
 /vendor_dlkm/lib/modules/sync_fence.ko:
 /vendor_dlkm/lib/modules/tz_log_dlkm.ko: /vendor_dlkm/lib/modules/tmecom-intf.ko /vendor_dlkm/lib/modules/qcom-scm.ko
 /vendor_dlkm/lib/modules/qcom_ipc_lite.ko:
+/vendor_dlkm/lib/modules/snd-soc-tas5805m.ko:
 /vendor_dlkm/lib/modules/rmnet_wlan.ko: /vendor_dlkm/lib/modules/rmnet_core.ko /vendor_dlkm/lib/modules/rmnet_ctl.ko /vendor_dlkm/lib/modules/ipa_fmwk.ko /vendor_dlkm/lib/modules/qmi_helpers.ko
 /vendor_dlkm/lib/modules/mem-hooks.ko:
 /vendor_dlkm/lib/modules/fingerprint_sysfs.ko:

@@ -362,6 +362,8 @@ alias of:N*T*Cqcom,kona-cdsp-pas qcom_q6v5_pas
 alias of:N*T*Cqcom,kona-cdsp-pasC* qcom_q6v5_pas
 alias of:N*T*Cqcom,kona-slpi-pas qcom_q6v5_pas
 alias of:N*T*Cqcom,kona-slpi-pasC* qcom_q6v5_pas
+alias of:N*T*Cqcom,kona-npu-pas qcom_q6v5_pas
+alias of:N*T*Cqcom,kona-npu-pasC* qcom_q6v5_pas
 alias of:N*T*Cqcom,crow-wpss-pas qcom_q6v5_pas
 alias of:N*T*Cqcom,crow-wpss-pasC* qcom_q6v5_pas
 alias of:N*T*Cqcom,crow-adsp-pas qcom_q6v5_pas
@@ -386,8 +388,12 @@ alias of:N*T*Cqcom,qcs605-adsp-pas qcom_q6v5_pas
 alias of:N*T*Cqcom,qcs605-adsp-pasC* qcom_q6v5_pas
 alias of:N*T*Cqcom,qcs605-cdsp-pas qcom_q6v5_pas
 alias of:N*T*Cqcom,qcs605-cdsp-pasC* qcom_q6v5_pas
-alias of:N*T*Cqcom,qcs605-modem-pas qcom_q6v5_pas
-alias of:N*T*Cqcom,qcs605-modem-pasC* qcom_q6v5_pas
+alias of:N*T*Cqcom,bengal-adsp-pas qcom_q6v5_pas
+alias of:N*T*Cqcom,bengal-adsp-pasC* qcom_q6v5_pas
+alias of:N*T*Cqcom,bengal-cdsp-pas qcom_q6v5_pas
+alias of:N*T*Cqcom,bengal-cdsp-pasC* qcom_q6v5_pas
+alias of:N*T*Cqcom,bengal-modem-pas qcom_q6v5_pas
+alias of:N*T*Cqcom,bengal-modem-pasC* qcom_q6v5_pas
 alias of:N*T*Cqcom,cmd-db cmd_db
 alias of:N*T*Cqcom,cmd-dbC* cmd_db
 alias platform:spi_geni spi_msm_geni
@@ -430,6 +436,7 @@ alias of:N*T*Csamsung,kernel_log_buf sec_log_buf
 alias of:N*T*Csamsung,kernel_log_bufC* sec_log_buf
 alias of:N*T*Cqcom,msm-cdsprm-rpmsg cdsprm
 alias of:N*T*Cqcom,msm-cdsprm-rpmsgC* cdsprm
+alias mdio:0000000000011100110010?????????? realtek
 alias of:N*T*Cqcom,scm-apq8064 qcom_scm
 alias of:N*T*Cqcom,scm-apq8064C* qcom_scm
 alias of:N*T*Cqcom,scm-apq8084 qcom_scm
@@ -741,6 +748,9 @@ alias of:N*T*Cqcom,spmi-temp-alarmC* qcom_spmi_temp_alarm
 alias of:N*T*Cqcom,smem smem
 alias of:N*T*Cqcom,smemC* smem
 alias usbfunc:diag usb_f_diag
+alias i2c:TAS5805m snd_soc_tas5805m
+alias of:N*T*Cti,tas5805m snd_soc_tas5805m
+alias of:N*T*Cti,tas5805mC* snd_soc_tas5805m
 alias of:N*T*Cqcom,lpass-cdc lpass_cdc_dlkm
 alias of:N*T*Cqcom,lpass-cdcC* lpass_cdc_dlkm
 alias of:N*T*Cqcom,lpass-cdc-clk-rsc-mngr lpass_cdc_dlkm
