@@ -1,2 +1,2 @@
-zram
-zsmalloc
+zram.ko
+zsmalloc.ko
