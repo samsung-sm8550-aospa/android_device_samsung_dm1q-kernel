@@ -156,6 +156,7 @@ alias pci:v00008086d0000F1A5sv*sd*bc*sc*i* nvme
 alias pci:v00008086d0000F1A6sv*sd*bc*sc*i* nvme
 alias pci:v00008086d00005845sv*sd*bc*sc*i* nvme
 alias pci:v00001B36d00000010sv*sd*bc*sc*i* nvme
+alias pci:v0000126Fd00002262sv*sd*bc*sc*i* nvme
 alias pci:v0000126Fd00002263sv*sd*bc*sc*i* nvme
 alias pci:v00001BB1d00000100sv*sd*bc*sc*i* nvme
 alias pci:v00001C58d00000003sv*sd*bc*sc*i* nvme
@@ -394,6 +395,10 @@ alias of:N*T*Cqcom,bengal-cdsp-pas qcom_q6v5_pas
 alias of:N*T*Cqcom,bengal-cdsp-pasC* qcom_q6v5_pas
 alias of:N*T*Cqcom,bengal-modem-pas qcom_q6v5_pas
 alias of:N*T*Cqcom,bengal-modem-pasC* qcom_q6v5_pas
+alias of:N*T*Cqcom,scuba-adsp-pas qcom_q6v5_pas
+alias of:N*T*Cqcom,scuba-adsp-pasC* qcom_q6v5_pas
+alias of:N*T*Cqcom,scuba-modem-pas qcom_q6v5_pas
+alias of:N*T*Cqcom,scuba-modem-pasC* qcom_q6v5_pas
 alias of:N*T*Cqcom,cmd-db cmd_db
 alias of:N*T*Cqcom,cmd-dbC* cmd_db
 alias platform:spi_geni spi_msm_geni
